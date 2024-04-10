@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #18181B;
+}
+
+nav{
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.nav-logo{
+    max-width: 100px;
+}
+
+.nav-links{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.link a{
+    position: relative;
+    padding-bottom: 0.75rem;
+    color: #fff;
+}
+
+.link a::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #1d4ed8;
+    transition: all 0.3s ease;
+}
+
+.link a:hover::after{
+    width: 70%;
+}
+
+.btn{
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #1d4ed8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #1e40af;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #1d4ed8;
+    z-index: -100;
+}
+
+header{
+    position: relative;
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+}
+
+header .content h4{
+    margin-bottom: 1rem;
+    color: #ccc;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+header .content h1{
+    color: #fff;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 4rem;
+}
+
+header .content h1 span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+header .content p{
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+header .image{
+    position: relative;
+}
+
+header .image::before{
+    content: "o";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 38rem;
+    font-weight: 400;
+    line-height: 20rem;
+    color: #1d4ed8;
+    opacity: 0.2;
+    z-index: -100;
+}
+
+header .image img{
+    max-width: 600px;
+    margin: auto;
+}
+
+section .header{
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+
+.features{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.features .card{
+    background-color: #27272a;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.features .card:hover{
+    background-color: #323232;
+    border-color: #fff;
+}
+
+.features .card span{
+    display: inline-block;
+    background-color: #1e40af;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.features .card h4{
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.features .card p{
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.features .card a{
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.features .card a:hover{
+    color: #1e40af;
+}
+
+.sub-header{
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    color: #ccc;
+}
+
+.pricing{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.pricing .card{
+    padding: 3rem 2rem;
+    background-color: #27272a;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.pricing .card:hover{
+    background-color: #323232;
+    border-color: #fff;
+}
+
+.pricing .card .content{
+    flex: 1;
+    margin-bottom: 2rem;
+}
+
+.pricing .card h4{
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.pricing .card h3{
+    color: #fff;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px dashed #fff;
+}
+
+.pricing .card p{
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.pricing .card p i{
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.pricing .card button{
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.pricing .card button:hover{
+    background-color: #1e40af;
+    border-color: #1e40af;
+}
+
+footer{
+    position: relative;
+    display: grid;
+    grid-template-columns: 400px repeat(3, 1fr);
+    gap: 2rem;
+}
+
+footer .column .logo{
+    max-width: 100px;
+    margin-bottom: 2rem;
+}
+
+footer .column p{
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+footer .column .socials{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer .column .socials a{
+    color: #ccc;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 1.25rem;
+    border-radius: 100%;
+    transition: all 0.3s ease;
+}
+
+footer .column .socials a:hover{
+    color: #fff;
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+footer .column h4{
+    color: #fff;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+footer .column > a{
+    display: block;
+    color: #ccc;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+footer .column > a:hover{
+    color: #1d4ed8;
+}
+
+.copyright{
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+@media (width < 900px){
+    .nav-links{
+        display: none;
+    }
+    header{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    footer{
+        grid-template-columns: 1fr 200px;
+    }
+}
+
+@media (width < 600px){
+    header .image::before{
+        display: none;
+    }
+
+    }
+    .spotify-playlists hr {
+    margin: 70px 0px 0px;
+    border-color: #636363;
+}
+
+.preview {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, #ae2896, #509bf5);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview h6 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.preview p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.preview button {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+    border: 0px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+
+/* Style for the container */
+.spotify-playlists {
+    display: flex;
+    flex-wrap: wrap; /* Wrap to the next row if needed */
+    justify-content: space-between; /* Space items evenly across the row */
+    gap: 20px; /* Add spacing between song containers */
+}
+.song {
+    text-align: center;
+    background-color: rgb(253, 252, 252);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(2, 233, 245, 0.971);
+    width: 250px;
+}
+
+img {
+    max-width: 100%;
+}
+
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Chatbox Button */
+.chatbox-button {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .chatbox-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+  
+  /* Chatbox */
+  .chat-container {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(400px);
+    transition: transform 0.3s ease-in-out;
+    z-index: 9999;
+  }
+  
+  .chat-container.open {
+    transform: translateX(0);
+  }
+  
+  /* Chatbox Header */
+  .chat-header {
+    background-image: url('https://a-static.besthdwallpaper.com/night-scenery-fantasy-wallpaper-2880x960-80895_104.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fffbfb;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .chat-header h2 {
+    margin: 0;
+  }
+  
+  /* Chatbox Body */
+  .chat-body {
+    padding: 10px;
+    height: 290px;
+    overflow-y: scroll;
+  }
+  
+  .message-container {
+    margin-bottom: 10px;
+  }
+  
+  .message-container.user {
+    text-align: right;
+  }
+  
+  .message-container.bot {
+    text-align: left;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    background-color: #e0e0e0; /* Light gray background */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Chatbox Footer */
+  .chat-footer {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  #userInput {
+    flex: 1;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid #0074d9;
+    outline: none;
+  }
+  
+  #sendButton {
+    padding: 5px 10px;
+    background-color: #0594ed;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  /* Microphone Icon */
+  #micIcon {
+    display: inline-block;
+    width: 31px;
+    height: 31px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/011/893/967/non_2x/neumorphic-microphone-icon-neumorphism-ui-button-free-png.png'); /* Replace with your microphone icon URL */
+    background-size: cover;
+    cursor: pointer;
+  }
+  
+  #micIcon:hover {
+    opacity: 0.8;
+  }
+  
+  /* Suggestions Container */
+  .suggestions-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  
+  .suggestion-button {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #131313;
+    padding: 6px 12px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+  }
+  
+  
+  
+  .suggestion-button:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Like and Dislike Icons */
+  .like-icon,
+  .dislike-icon {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  /* Like Icon Styles */
+  .like-icon {
+    color: #090909;
+  }
+  
+  .like-icon.clicked {
+    color: #0055ff;
+  }
+  
+  /* Dislike Icon Styles */
+  .dislike-icon {
+    color: #0f0f0f;
+  }
+  
+  .dislike-icon.clicked {
+    color: #ff0000;
+  }
+
+  h1 {
+            text-align: center;
+            color: white;
+        }
+        .box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #04fdfd;
+            border-radius: 5px;
+        }
+        p {
+            line-height: 1.6;
+        }
+       
+       
+
+
+    </style>
+    <title>8D Audio Music Production</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <a href="#">
+                <img src="logo.png.png">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="link"><a href="https://8daudiomusicpro.github.io/8daudiomusicpr/?">Home</a></li>
+            <li id="link1" class="link"><a href="https://www.youtube.com/@8daudiomusicproduction/featured">YouTube</a></li>
+            <li id="link2" class="link"><a href="https://discord.com/invite/3zz5sXAfBz">Discord</a></li>
+            <li id="link3" class="link"><a href="#">About</a></li>
+        </ul>
+        <a href="https://8daudiomusicproduction.github.io/8daudiomusicproduction/#" class="btn">Logout</a>
+    </nav>
+
+    <h1>Terms and Conditions</h1>
+    <div class="box">
+      <p>
+        Last Updated: [Wednesday, 24 January 2024]
+
+Please read these Terms and Conditions ("Please Donot use the image or any audio it will lead to a copyright claim.") carefully before using the website (the "service are you  can listen the  music and download it for free") operated by [8D AUDIO MUSIC PRODUCTION] .</p>
+
+<p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service.</p>
+<p>
+By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms, then you may not access the Service.
+      </p>
+      <h2>1. Acceptance of Terms</h2>
+      <p>1.1. By accessing or using our Service, you agree to comply with these Terms and any additional terms and conditions that may apply to specific parts of the Service.</p>
+      <h2>2. Use of the Service</h2>
+      <p>
+        2.1. You agree to use the Service only for lawful purposes and in accordance with these Terms.
+
+2.2. You may not use the Service for any illegal or unauthorized purpose, nor may you, in the use of the Service, violate any laws in your jurisdiction.
+      </p>
+      <h2>3. User Accounts</h2>
+      <p>3.1. To access certain features of the Service, you may be required to create an account. You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer or mobile device.
+
+        3.2. You agree to accept responsibility for all activities that occur under your account or password. You must notify us immediately of any unauthorized use of your account or any other breach of security.</p>
+       <h2>4. Intellectual Property</h2>
+       <p>
+        4.1. The Service and its original content, features, and functionality are and will remain the exclusive property of [8D AUDIO MUSIC PRODUCTION] and its licensors. The Service is protected by copyright, trademark, and other laws.
+       </p>
+       <h2>5. Termination</h2>
+       <p>
+        5.1. We reserve the right to terminate or suspend your account and access to the Service at our sole discretion, without notice, for any reason, including but not limited to a breach of these Terms.
+</p>
+<h2>6. Changes to Terms and Conditions</h2>
+<p>
+    6.1. We may revise these Terms and Conditions at any time without prior notice. By using the Service after any such change, you agree to be bound by the revised Terms.
+</p>
+<h2>7. Contact Information</h2>
+<p>
+    7.1. If you have any questions about these Terms and Conditions, please contact us at[8daudiomusicproductionr@gmail.com].
+
+By accessing or using the Service, you agree to these Terms and Conditions. If you do not agree to these Terms, please refrain from using the Service.
+
+Thank you for visiting [8D AUDIO MUSIC PRODUCTION OFFICIAL WEBSITE].
+</p>
+  </div>
+    </div>
+      <!-- Chatbox Button -->
+<div class="chatbox-button" onclick="toggleChatbox()">
+    <img src="https://cdn.dribbble.com/users/6985884/screenshots/15849023/media/6dfb9f3caf75d8b6acc1f9bde6b885fa.gif" alt="Chatbox Logo" class="chatbox-button-logo">
+  </div>
+  <!-- Chatbox -->
+  <div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+      <h2>Chat With AI</h2>
+    </div>
+    
+    <div class="chat-body" id="chatBody">
+      <!-- Chat messages will be appended here dynamically -->
+      <div class="message-container bot">
+        <div class="message">Hi! How can I assist you today?</div>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <input type="text" id="userInput" placeholder="Type your message...">
+      <div id="micIcon" onclick="startSpeechRecognition()"></div>
+      <button id="sendButton" onclick="sendMessage()">Send</button> 
+  </div>
+ 
+    <!-- Suggestions Container -->
+    <div class="suggestions-container" id="suggestionsContainer"></div>
+  </div>
+  
+    <footer class="container">
+        <span class="blur"></span>
+        <span class="blur"></span>
+        <div class="column">
+            <div class="logo">
+                <img src="logo.png.png">
+            </div>
+            <p>
+                Thanks for visiting.
+            </p>
+            <div class="socials">
+                <a href="https://www.youtube.com/@8daudiomusicproduction/featured"><i class="ri-youtube-line"></i></a>
+                <a href="https://www.instagram.com/8d_audio_music_production/"><i class="ri-instagram-line"></i></a>
+                <a href="https://twitter.com/8daudiomusicpro"><i class="ri-twitter-line"></i></a>
+            </div>
+        </div>
+        <div class="column">
+            <h4>Company</h4>
+            <a href="https://www.youtube.com/channel/UCthjI8cJuvwVl32XP3Qj0yw">Business</a>
+            <a href="https://www.tseries.com/">Partnership</a>
+            <a href="https://youtu.be/ZceLsGUwgPc?si=cl12dRAM11cHQ9hp">Trending Video</a>
+        </div>
+        <div class="column">
+            <h4>About Us</h4>
+            <a href="https://8daudiomusicproduction.github.io/8daudiomusicproduction/">Website</a>
+            <a href="https://www.youtube.com/channel/UCthjI8cJuvwVl32XP3Qj0yw">Channels</a>
+            <a href="https://new.express.adobe.com/?promoid=4JW7987Y&mv=other">Sponsors</a>
+        </div>
+        <div class="column">
+            <h4>Contact</h4>
+            <a href="https://discord.com/channels/780652557579321355/935449383602892810">Contact Us</a>
+            <a href="https://8daudiomusicpro.github.io/8daudiomusicpro/">Privicy Policy</a>
+            <a href="https://8daudiomusicpro.github.io/8daudiomusicpro/">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        Copyright © 2024 8D Audio Music Production. All Rights Reserved.
+    </div>
+
+
+    <script>
+        function scrollToElement(elementSelector, instance = 0) {
+    // Select all elements that match the given selector
+    const elements = document.querySelectorAll(elementSelector);
+    // Check if there are elements matching the selector and if the requested instance exists
+    if (elements.length > instance) {
+        // Scroll to the specified instance of the element
+        elements[instance].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+const link1 = document.getElementById("link1");
+const link2 = document.getElementById("link2");
+const link3 = document.getElementById("link3");
+
+link1.addEventListener('click', () => {
+    scrollToElement('.header');
+});
+
+link2.addEventListener('click', () => {
+    // Scroll to the second element with "header" class
+    scrollToElement('.header', 1);
+});
+
+link3.addEventListener('click', () => {
+    scrollToElement('.column');
+});
+    </script>
+<script src="https://kit.fontawesome.com/ef9a692198.js" crossorigin="anonymous"></script>
+<script src="music.js"></script>
+
+</body>
+
+</html>
