@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>8D Audio Music Production</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+      .collapse {
+        justify-content: flex-end;
+      }
+      .navbar-toggler {
+        background-color: #fff !important;
+      }
+      .main {
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2em 0em;
+      }
+     
+      nav{
+    max-width: 1200px;
+    margin: auto;
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+
+
+    
+      .navbar a{
+    position: relative;
+    font-size: 16px;
+    color: #04d7fc;
+    margin-right: 30px;
+    text-decoration: none;
+}
+.navbar a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #98fb02;
+    bottom: -5px;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s ease;
+}
+.navbar a:hover:after{
+    transform: translateY(0);
+    opacity: 1;
+}
+footer {
+        text-align: center;
+        padding: 1em 0;
+        background-color: #f8f9fa;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 2em;
+      }
+      footer p {
+        margin: 0;
+        font-size: 0.9em;
+        color: #555;
+      }
+
+
+/* Styles for the user section */
+.user-section {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .user-info {
+      display: none; /* Initially hidden */
+      align-items: center;
+    }
+
+    .user-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+      cursor: pointer; /* Add cursor pointer */
+    }
+
+    .user-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .logout-button {
+      background-color: #ffffff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    h1 {
+            text-align: center;
+            color: white;
+        }
+        .box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #04fdfd;
+            border-radius: 5px;
+        }
+        p {
+            line-height: 1.6;
+        }
+    .show {
+      display: flex; /* Show when toggled */
+    }
+ 
+    .navbar-toggler {
+            order: -1;
+        }
+
+
+    </style>
+    <link
+      rel="shortcut icon"
+      href="images/icons8-spotify-48.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+      
+    />
+  </head>
+  <body
+    style="
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(788px at 0.7% 3.4%, rgb(164, 231, 192) 0%, rgb(255, 255, 255) 90%);
+      background-repeat: no-repeat;
+    "
+  >
+    <div class="container-md">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img src="images/icons8-spotify-48.png" alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <nav class="navbar">
+              <nav class="navbar">
+                <a href="https://8daudiomusicpro.github.io/8daudiomusicpr/?">Home</a>
+                <a href="https://www.youtube.com/@8daudiomusicproduction/featured"target="_main">YouTube</a>
+                  <a href="https://www.instagram.com/8d_audio_music_production/" target="_main">Instagram</a>
+                  <a href="https://discord.com/invite/3zz5sXAfBz"target="_main">Discord</a>
+                  
+              </div>
+             
+              <div class="user-section">
+                <img src="https://img.freepik.com/premium-photo/bearded-man-illustration_665280-67047.jpg" alt="User Logo" class="user-logo" id="user-logo">
+                <div class="user-info">
+                  <span class="user-name">Hello User!</span>
+                  <button class="logout-button"> <a href="https://8daudiomusicproduction.github.io/8daudiomusicproduction/#">Logout</a></button>
+                </div>
+              </div>
+      </div>
+      </nav>
+      
+      <h1>Terms and Conditions</h1>
+      <div class="box">
+        <p>Last Updated: [Thursday, 13 March 2025]
+
+          Please read these Terms and Conditions carefully before using the website operated by 8D Audio Music Production. ("Please do not use the image or any audio; it will lead to a copyright claim.")
+          
+          </p>
+  
+  <p>Your access to and use of the Service are conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all visitors, users, and others who access or use the Service.</p>
+  <p>By accessing or using the Service, you agree to be bound by these Terms. If you disagree with any part of the terms, you may not access the Service.
+  
+        </p>
+        <h2>1. Acceptance of Terms</h2>
+        <p>1.1. By accessing or using our Service, you agree to comply with these Terms and any additional terms and conditions that may apply to specific parts of the Service.
+
+        </p>
+        <h2>2. Use of the Service</h2>
+        <p>
+          2.1. You agree to use the Service only for lawful purposes and in accordance with these Terms.
+          2.2. You may not use the Service for any illegal or unauthorized purpose, nor may you, in the use of the Service, violate any laws in your jurisdiction.
+        </p>
+        <h2>3. User Accounts</h2>
+        <p>3.1. To access certain features of the Service, you may be required to create an account. You are responsible for maintaining the confidentiality of your account and password and for restricting access to your computer or mobile device.
+          3.2. You acknowledge responsibility for all activities that occur under your account or password. You must promptly notify us of any unauthorized use of your account or any other breach of security.</p>
+         <h2>4. Intellectual Property</h2>
+         <p>
+          4.1. The Service and its original content, features, and functionality are and will remain the exclusive property of 8D Audio Music Production and its licensors. The Service is protected by copyright, trademark, and other applicable laws.
+         </p>
+         <h2>5. AI Chatbot Usage</h2>
+         <p>
+          5.1. The AI chatbot ("Byte AI") is provided for user interaction, information, and entertainment purposes.
+          5.2. Users must not misuse the chatbot for illegal, harmful, abusive, or deceptive activities.
+          5.3. The chatbot may provide music-related recommendations and general responses but does not offer legally binding advice.
+          5.4. 8D Audio Music Production reserves the right to log conversations for quality improvement, but personal data will not be shared without user consent.
+  </p>
+  <h2>6. Spotify Music Player Integration</h2>
+  <p>
+    6.1. The chatbot includes a Spotify music player that allows users to stream music directly within the chat interface.
+    6.2. Users must have a valid Spotify account to access premium features, and all streaming is subject to Spotify’s Terms of Service.
+    6.3. 8D Audio Music Production is not responsible for any changes, errors, or interruptions in the Spotify service.
+  </p>
+  <h2>7. Termination</h2>
+  <p>
+    7.1. We reserve the right to terminate or suspend your account and access to the Service at our sole discretion, without prior notice, for any reason, including but not limited to a breach of these Terms.
+  </p>
+  <h2>8. Changes to Terms and Conditions</h2>
+  <p>8.1. We may revise these Terms and Conditions at any time without prior notice. By continuing to use the Service after any such revision, you acknowledge your acceptance of the revised Terms.</p>
+    <h2>9. Contact Information</h2>
+    <p>9.1. If you have any inquiries regarding these Terms and Conditions, please contact us at [8daudiomusicproductionr@gmail.com].
+
+      By accessing or utilizing the Service, you express your acceptance of these Terms and Conditions. If you do not concur with these Terms, please refrain from using the Service.
+      
+      Thank you for visiting the official website of 8D Audio Music Production.</p>
+</div>
+      </div>
+
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz4fnFO9gybBogGzeyzQKZBnxzKmqO8mZ5VxPmgPbA7Pmf0PZ6SZ0y2v9/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-pprn3073KE6tl6/9-+YtgI67CgtOe1eT3rti3Pz6WRJO9Vx3/Jd2RGRp2nK1p0h7"
+      crossorigin="anonymous"
+      
+    >
+  </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+
+window.addEventListener("click", function (e) {
+  if (!btn.contains(e.target)) classList.remove("active");
+});
+  // Function to toggle user info visibility
+  function toggleUserInfo() {
+      var userInfo = document.querySelector('.user-info');
+      userInfo.classList.toggle('show');
+    }
+
+    // Event listener for user logo click
+    var userLogo = document.getElementById('user-logo');
+    userLogo.addEventListener('click', function() {
+      toggleUserInfo();
+    });
+
+    function updateMusicPlayer(imageUrl, songName, audioUrl) {
+    document.getElementById('song-image').src = imageUrl;
+    document.getElementById('song-name').textContent = songName;
+    var audioPlayer = document.getElementById('audio-player');
+    audioPlayer.src = audioUrl;
+    audioPlayer.play();
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarNav = document.querySelector('#navbarNav');
+
+    // Function to toggle the navbar
+    function toggleNavbar() {
+        navbarNav.classList.toggle('show');
+    }
+
+    // Event listener for the navbar toggler button
+    navbarToggler.addEventListener('click', function() {
+        toggleNavbar();
+    });
+
+    // Close the navbar when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (!navbarToggler.contains(event.target) && !navbarNav.contains(event.target)) {
+            navbarNav.classList.remove('show');
+        }
+    });
+});
+
+
+  </script>
+  <footer>
+    <p> Copyright © 2025 8D Audio Music Production. All Rights Reserved.</p>
+  </footer>
+  </body>
+</html>
